@@ -9,24 +9,11 @@ function convertDatetime(){
       date = new Date(Number(t_str));
     }else{
       // alert("wrong length");
-      document.getElementById("reesult").innerHTML = "wrong length";
+      document.getElementById("result").innerHTML = "Not a unixtimestamp";
       return;
     }
 
-    var year = date.getFullYear();
-    var mon = date.getMonth();
-    var day = date.getDay();
-    // Hours part from the timestamp
-    var hours = date.getHours();
-    // Minutes part from the timestamp
-    var minutes = "0" + date.getMinutes();
-    // Seconds part from the timestamp
-    var seconds = "0" + date.getSeconds();
-    
-    // Will display time in 10:30:23 format
-    var formattedTime = year +'-'+ mon +'-'+ day +' '+ hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-
-    document.getElementById("reesult").innerHTML = formattedTime;
+    document.getElementById("result").innerHTML = date.toString();
     // alert(formattedTime);
 }
 
@@ -36,7 +23,6 @@ function convertDatetime(){
 
 // console.log(document);
 window.onload = function (){
-    // alert("hee");
     document.getElementById("btn_submit").onclick = function(){
         convertDatetime();
     };
